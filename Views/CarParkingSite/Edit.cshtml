@@ -1,0 +1,53 @@
+﻿@model OnlineCarParking.Entity.CarParkingBooking
+
+@{
+    ViewBag.Title = "Edit";
+}
+<h2>Edit Parking Site Details</h2>
+<br />
+@using (Html.BeginForm("Update", "CarParkingSite", FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.carId)
+    <table cellpadding="10">
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.carParkingSiteName)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.carParkingSiteName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.carParkingSiteLocation)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.carParkingSiteLocation)
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.parkingSlots)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.parkingSlots)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Back", "TempDataCheck")
+            </td>
+            <td>
+                <input type="submit" id="submit" />
+            </td>
+        </tr>
+    </table>
+}
+
+
+
+
+
+
+

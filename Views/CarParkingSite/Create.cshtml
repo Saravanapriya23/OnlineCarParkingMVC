@@ -1,0 +1,55 @@
+﻿@model OnlineCarParking.Entity.CarParkingBooking
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add Parking Site Details</h2>
+<br />
+@using (Html.BeginForm("Create", "CarParkingSite", FormMethod.Post))
+{<table cellpadding="10">
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.carId);
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.carId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.carParkingSiteName)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.carParkingSiteName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.carParkingSiteLocation)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.carParkingSiteLocation)
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.parkingSlots)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.parkingSlots)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Back", "DataPassing")
+            </td>
+            <td>
+                <input type="submit" id="submit" />
+            </td>
+        </tr>
+    </table>
+}
+
+

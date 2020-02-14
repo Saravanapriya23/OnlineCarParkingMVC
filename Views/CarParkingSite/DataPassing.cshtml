@@ -1,0 +1,53 @@
+﻿@model OnlineCarParking.Entity.CarParkingBooking
+
+@{
+    ViewBag.Title = "DataPassing";
+}
+
+<h2>DataPassing</h2>
+<h2>View</h2>
+<table border="1">
+    <tr>
+        <td>CarParkingSiteId</td>
+        <td>CarParkingSiteName</td>
+        <td>CarParkingSiteLocation</td>
+        <td>ParkingSlots</td>
+    </tr>
+    @foreach (OnlineCarParking.Entity.CarParkingBooking item in (List<OnlineCarParking.Entity.CarParkingBooking>)ViewData["carparkingBookings"])
+    {
+        <tr>
+            <td>
+                @item.carId
+            </td>
+            <td>
+                @item.carParkingSiteName
+            </td>
+            <td>
+                @item.carParkingSiteLocation
+            </td>
+            <td>
+                @item.parkingSlots
+            </td>
+        </tr>
+    }
+    @foreach (OnlineCarParking.Entity.CarParkingBooking item in (List<OnlineCarParking.Entity.CarParkingBooking>)ViewBag["carparkingBookings"])
+    {
+        <tr>
+            <td>
+                @item.carId
+            </td>
+            <td>
+                @item.carParkingSiteName
+            </td>
+            <td>
+                @item.carParkingSiteLocation
+            </td>
+            <td>
+                @item.parkingSlots
+            </td>
+        </tr>
+    }
+</table>
+
+
+
