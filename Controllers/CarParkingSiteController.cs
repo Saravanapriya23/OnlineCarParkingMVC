@@ -25,7 +25,7 @@ namespace OnlineCarParking.Controllers
             ViewBag.carparkingBookings = carparkingBookings;
             ViewData["carparkingBookings"] = carparkingBookings;
             TempData["carparkingBookings"] = carparkingBookings;
-            return RedirectToAction("TempDataChecking");
+            return RedirectToAction("TempDataCheck");
         }
         public ActionResult TempDataCheck()
         {
@@ -60,7 +60,7 @@ namespace OnlineCarParking.Controllers
             CarParkingBooking carParking = carparkingsitedetails.GetParkingSiteDetailsById(id);
             return View(carParking);
         }
-        public ActionResult Update(CarParkingBooking carParking)
+        public ActionResult Update([Bind(Include="carId, carParkingSiteName, carParkingSiteLocation")] CarParkingBooking carParking)
         {
             carparkingsitedetails.UpdateCarParkingDetails(carParking);
             TempData["Result"] = "Added successfully";
